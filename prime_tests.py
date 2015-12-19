@@ -62,11 +62,11 @@ class PrimeNumMatrixTests(unittest.TestCase):
 
 	def test_calcs_are_correct(self):
 		# each row should add up to its prime x 10
+		# this only works for the first three primes
 		seq = sut.prime_sequence(3)
 		matrix = sut.matrix_calculator(seq)
-		for row in matrix:
-			self.assertTrue(sum(row[1:] is row[0] * 10))
+		for row in matrix[1:]:	#skip the headers row
+			self.assertTrue(sum(row[1:]) is row[0] * 10)
 
 if __name__ == "__main__":
 	unittest.main()
-
