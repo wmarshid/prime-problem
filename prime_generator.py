@@ -1,5 +1,11 @@
 import sys
 
+# produces a 2D array (list of lists) of the multiples of a sequence of primes
+# n - input list which contains the list of primes
+def matrix_calculator(n):
+	return [[]]
+
+
 # produces sequence of prime numbers dependant on the user input
 # e.g. if n = 5 generates 5 primes
 # if input is not a positive number, return empty list

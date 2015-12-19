@@ -23,7 +23,12 @@ class PrimeNumTests(unittest.TestCase):
 		self.assertFalse(sut.is_prime(-5))
 
 class PrimeNumGenTests(unittest.TestCase):
-	"""Tests for 'prime' unit."""
+	"""Tests for 'prime_sequence' unit."""
+
+	def test_list_size_is_correct(self):
+		num = 3
+		seq = sut.prime_sequence(num)
+		self.assertTrue(len(seq) is num)
 
 	def test_last_num(self):
 		# We know that 5 is the 3rd prime number
@@ -36,7 +41,31 @@ class PrimeNumGenTests(unittest.TestCase):
 		self.assertTrue(len(sut.prime_sequence(0)) is 0)
 
 	def test_list_size_for_negative_input(self):
+		# Returns an empty list
 		self.assertTrue(len(sut.prime_sequence(-5)) is 0)
+
+class PrimeNumMatrixTests(unittest.TestCase):
+	"""Tests for 'matrix_calculator'."""
+
+	def test_grid_size_is_correct(self):
+		# grid should have N+1 rows and N+1 columns
+		num = 3
+		seq = sut.prime_sequence(num)
+		matrix = sut.matrix_calculator(seq)
+		self.assertTrue(len(matrix) is num+1) #checks rows
+		self.assertTrue(len(matrix[0]) is num+1) #checks columns
+
+	def test_row_headings_match_sequence(self):
+		seq = [1, 2, 3] #sut.prime_sequence(3)
+		row_headings = [1, 2, 3] #sut.matrix_calculator(seq)[0][1:]
+		self.assertTrue(seq == row_headings)
+
+	def test_calcs_are_correct(self):
+		# each row should add up to its prime x 10
+		seq = sut.prime_sequence(3)
+		matrix = sut.matrix_calculator(seq)
+		for row in matrix:
+			self.assertTrue(sum(row[1:] is row[0] * 10))
 
 if __name__ == "__main__":
 	unittest.main()
