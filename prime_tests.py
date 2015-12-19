@@ -56,8 +56,8 @@ class PrimeNumMatrixTests(unittest.TestCase):
 		self.assertTrue(len(matrix[0]) is num+1) #checks columns
 
 	def test_row_headings_match_sequence(self):
-		seq = [1, 2, 3] #sut.prime_sequence(3)
-		row_headings = [1, 2, 3] #sut.matrix_calculator(seq)[0][1:]
+		seq = sut.prime_sequence(3)
+		row_headings = sut.matrix_calculator(seq)[0][1:]
 		self.assertTrue(seq == row_headings)
 
 	def test_calcs_are_correct(self):
