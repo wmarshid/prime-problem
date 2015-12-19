@@ -2,7 +2,12 @@ import sys
 
 # produces sequence of prime numbers dependant on the user input
 # e.g. if n = 5 generates 5 primes
+# if input is not a positive number, return empty list
 def prime_sequence(n):
+
+	if n < 1:
+		return []
+
 	primes = list()
 	count = 2
 
