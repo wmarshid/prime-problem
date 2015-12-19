@@ -10,6 +10,8 @@ class PrimeGenTests(unittest.TestCase):
 	def test_is_one_prime(self):
 		self.assertFalse(sut.is_prime(1))
 
+	def test_is_six_prime(self):
+		self.assertFalse(sut.is_prime(6))
 
 if __name__ == "__main__":
 	unittest.main()
