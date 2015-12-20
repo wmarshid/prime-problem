@@ -30,7 +30,6 @@ def prime_sequence(n):
 		if is_prime(count):
 			primes.append(count)
 		count = count + 1
-
 	return primes
 
 # determines if the number entered is a prime based on explicit criteria
@@ -38,16 +37,20 @@ def prime_sequence(n):
 def is_prime(n):
 	if n < 2:
 		return False
-	
 	for div in range(2, n):
 		if n % div == 0:
 			return False
-	
 	return True
 
+def pretty_print(mtx):
+	for row in mtx:
+		for num in row:
+			fnum = '%3s' % (str(num),)
+			print "| " + fnum,
+		print "|"
 
 if __name__ == "__main__":
 
 	num = int(sys.argv[1])
 	seq = prime_sequence(num)
-	print matrix_calculator(seq)
+	pretty_print(matrix_calculator(seq))
