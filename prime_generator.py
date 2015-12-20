@@ -45,8 +45,8 @@ def is_prime(n):
 def pretty_print(mtx):
 	for row in mtx:
 		for num in row:
-			fnum = '%3s' % (str(num),)
-			print "| " + fnum,
+			out = '%4s' % (str(num),)
+			print "| " + out,
 		print "|"
 
 if __name__ == "__main__":
